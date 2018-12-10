@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a href="/threads" class="nav-link">All Threads</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/threads/create" class="nav-link">Create Thread</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
