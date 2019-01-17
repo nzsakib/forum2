@@ -39,6 +39,19 @@
                         <li class="nav-item">
                             <a href="/threads/create" class="nav-link">Create Thread</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Channels
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach(App\Channel::all() as $channel)
+                                    <a class="dropdown-item" href="/threads/{{ $channel->slug }}"> {{ $channel->name }} </a>
+                                @endforeach
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
