@@ -9,29 +9,14 @@
                     <small> Since {{ $profileUser->created_at->diffForHUmans() }}</small>
                 </h1>
             </div>
-            <hr> @foreach ($threads as $thread)
-            <div class="card">
-                <div class="card-header">
-                    <div class="level">
-                        <h4 class="flex">
-                            <a href="{{ $thread->path() }}"> {{ $thread->title }} </a>
-                        </h4>
-
-                        <span>{{ $thread->created_at->diffForHumans() }}</span>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <article>
-                        <div class="body">
-                            {{ $thread->body }}
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <br>
+            <hr> 
+            @foreach ($activities as $date => $activity)
+                <h3 class="page-header">{{ $date }}</h3>
+                @foreach($activity as $record)
+                    @include("profiles.activities.{$record->type}", ['activity' => $record])
+                    <br>
+                @endforeach
             @endforeach 
-            {{ $threads->links() }}
         </div>
     </div>
 </div>
