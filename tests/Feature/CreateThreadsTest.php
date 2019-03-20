@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Activity;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -85,6 +86,8 @@ class CreateThreadsTest extends TestCase
         // Cannot use toArray because Channel exists in the data
         $this->assertDatabaseMissing('threads', [ 'id' => $thread->id ]);
         $this->assertDatabaseMissing('replies', [ 'id' => $reply->id ]);
+        
+        $this->assertEquals(0, Activity::count());
     }
 
     public function publishThread($overrides)
