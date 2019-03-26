@@ -11,6 +11,15 @@ class Reply extends Model
     protected $guarded = [];
     
     protected $with = ['owner', 'favorites'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($reply) {
+            $reply->favorites->each->delete();
+        });
+    }
 	
     public function owner()
     {
@@ -26,4 +35,5 @@ class Reply extends Model
     {
         return $this->thread->path() . "#reply-{$this->id}";
     }
+
 }
