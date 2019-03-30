@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <textarea name="body" id="body" cols="30" rows="5" placeholder="Have something to say?" class="form-control"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-default">Post</button>
+                    <button type="submit" class="btn btn-primary">Post</button>
                 </form>
             @else 
                 <div class="text-center">
