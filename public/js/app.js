@@ -37601,7 +37601,7 @@ var render = function() {
     [
       _c("i", { staticClass: "fas fa-heart" }),
       _vm._v(" "),
-      _c("span", { domProps: { textContent: _vm._s(_vm.favoritesCount) } })
+      _c("span", { domProps: { textContent: _vm._s(_vm.count) } })
     ]
   )
 }
