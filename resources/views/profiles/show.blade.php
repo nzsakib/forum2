@@ -10,7 +10,7 @@
                 </h1>
             </div>
             <hr> 
-            @foreach ($activities as $date => $activity)
+            @forelse ($activities as $date => $activity)
                 <h3 class="page-header">{{ $date }}</h3>
                 @foreach($activity as $record)
                     @if(view()->exists("profiles.activities.{$record->type}"))
@@ -18,7 +18,9 @@
                     @endif
                     <br>
                 @endforeach
-            @endforeach 
+            @empty 
+                <p>There is no activity for this user</p>
+            @endforelse 
         </div>
     </div>
 </div>
